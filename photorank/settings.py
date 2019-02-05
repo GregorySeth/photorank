@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'productclone.urls'
+ROOT_URLCONF = 'photorank.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'productclone.wsgi.application'
+WSGI_APPLICATION = 'photorank.wsgi.application'
 
 
 # Database
