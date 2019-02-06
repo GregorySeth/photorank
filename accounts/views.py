@@ -8,9 +8,7 @@ def accounts(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        return redirect('home')
-
-    return render(request, 'accounts/logout.html')
+        return render(request, 'accounts/logout.html')
 
 def login(request):
     if request.method == 'POST':
@@ -19,7 +17,7 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'accounts/login.html', {'error':'Nieprawidłowy użytkownik, lub hasło'})
+            return render(request, 'accounts/login.html', {'error':'Nieprawidłowy użytkownik, lub hasło.'})
     else:
         return render(request, 'accounts/login.html')
 
@@ -29,13 +27,13 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.get(username=request.POST['username'])
-                return render(request, 'accounts/signup.html', {'error':'Taki użytkownik już istnieje'})
+                return render(request, 'accounts/signup.html', {'error':'Taki użytkownik już istnieje.'})
             except User.DoesNotExist:
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 auth.login(request, user)
                 return redirect('home')
         else:
-            return render(request, 'accounts/signup.html', {'error':'Podane hasła różnią się od siebie'})
+            return render(request, 'accounts/signup.html', {'error':'Podane hasła różnią się od siebie.'})
     else:
         #User wants to enter info
         return render(request, 'accounts/signup.html')

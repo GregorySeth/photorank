@@ -2,12 +2,6 @@
 
 {% block content %}
 
-{% if error %}
-{{ error }}
-<br>
-<br>
-{% endif %}
-
 <h1>Zaloguj się</h1>
 
 <form action="{% url 'login' %}" method="POST">
@@ -23,8 +17,15 @@
   <input type="password" name="password">
   <br>
   <br>
+  {% if error %}
+  Błąd! {{ error }}
+  <br>
+  <br>
+  {% endif %}
   <input class="przycisk" type="submit" name="submit" value="Login">
 
 </form>
+
+
 
 {% endblock %}

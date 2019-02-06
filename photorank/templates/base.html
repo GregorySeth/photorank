@@ -40,7 +40,6 @@
 				<form id="logout" action="{% url 'logout' %}" method="post">
 					{% csrf_token %}
 					<input type="hidden">
-
 				</form>
 				{% else %}
 				<a class="nav-item nav-link" href='{% url "signup" %}'>Rejestracja</a>
