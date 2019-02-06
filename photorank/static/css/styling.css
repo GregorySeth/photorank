@@ -98,11 +98,10 @@ body {
 .przycisk {
 
 	display: inline-flex;
-	border: 2px solid #FF9A37;
-	margin: 30px 10px 0px 0px;
+	border: 2px solid #4D9945;
 	padding-left: 10px;
 	padding-right: 10px;
-	color: #FF9A37;
+	color: #D3F4D0;
 	font-weight: bold;
 	font-size: 130%;
 	border-radius: 20px;
@@ -112,7 +111,7 @@ body {
 .przycisk:hover {
 
 	color: #050200;
-	background-color: #FF9A37;
+	background-color: #D3F4D0;
 	cursor: pointer;
 
 }

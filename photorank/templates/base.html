@@ -27,7 +27,7 @@
 	<!-- GÓRNY NAVBAR -->
 
 	<nav id="navbar_custom" class="navbar navbar-expand-sm navbar-dark">
-    <a class="navbar-brand" href=''>
+    <a class="navbar-brand" href='{% url "home" %}'>
       <img id="logo" src="{% static 'img/pr.png' %}" class="d-inline-block align-top">
     </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,8 +35,8 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href="">Rejestracja</a>
-        <a class="nav-item nav-link" href="">Login</a>
+        <a class="nav-item nav-link" href='{% url "signup" %}'>Rejestracja</a>
+        <a class="nav-item nav-link" href='{% url "login" %}'>Login</a>
       </div>
 		</div>
 	</nav>
