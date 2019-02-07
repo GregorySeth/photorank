@@ -14,6 +14,7 @@ import os
 
 try:
     from .password import *
+    from .local_settings import *
 except ImportError:
     pass
 
