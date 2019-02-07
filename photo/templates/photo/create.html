@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Dodaj zdjęcie</h1>
+
+<form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+
+  {% csrf_token %}
+
+  Tytuł:
+  <br>
+  <input type="text" name="title" value="">
+  <br>
+  Opis:
+  <br>
+  <input type="textbox" name="summary">
+  <br>
+  Link:
+  <br>
+  <input type="text" name="url">
+  <br>
+  Miniatura:
+  <br>
+  <input type="file" name="icon">
+  <br>
+  Zdjęcie:
+  <br>
+  <input type="file" name="image">
+  <br>
+  <br>
+  {% if error %}
+  Niestety!
+  {{ error }}
+  <br>
+  <br>
+  {% endif %}
+  <input class="przycisk" type="submit" name="submit" value="Dodaj zdjęcie">
+
+</form>
+
+{% endblock %}

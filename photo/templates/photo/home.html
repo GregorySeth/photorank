@@ -2,6 +2,30 @@
 
 {% block content %}
 
-<h1>Start page</h1>
+{% for photo in photos.all %}
+
+<div class="row pt-3">
+  <div class="col-2" onclick="window.location='{% url 'detail' photo.id %}';" style="cursor: pointer">
+    <img src="{{photo.icon.url}}" class="img-fluid">
+  </div>
+  <div class="col-6" onclick="window.location='{% url 'detail' photo.id %}';" style="cursor: pointer">
+    <h2>{{ photo.title }}</h2>
+    <p>{{ photo.body }}</p>
+  </div>
+  <div class="col-2">
+    <a href="javascript:{document.getElementById('upvote{{ photo.id }}').submit()}"><button type="button" class="przycisk">Zagłosuj: {{ photo.votes_total }}</button></a>
+  </div>
+</div>
+
+<form id="upvote{{ photo.id }}" class="" action="{% url 'upvote' photo.id %}" method="post">
+  {% csrf_token %}
+  <input type="hidden">
+</form>
+
+<hr>
+
+{% endfor %}
+
+
 
 {% endblock %}

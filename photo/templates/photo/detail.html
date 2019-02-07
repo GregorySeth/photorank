@@ -1,1 +1,47 @@
-<h1>Detail page</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row pb-3">
+  <div class="col-2">
+    <img src="{{photo.icon.url}}" class="img-fluid">
+  </div>
+  <div class="col-6 text-center">
+    <h1>{{photo.title}}</h1>
+  </div>
+</div>
+
+<div class="row pb-3">
+  <div class="col-8">
+    <img src="{{photo.image.url}}" class="img-fluid">
+  </div>
+  <div class="col-2">
+    <a href="javascript:{document.getElementById('upvote').submit()}"><button type="button" class="przycisk btn-lg ">Zagłosuj: {{ photo.votes_total }}</button></a>
+  </div>
+</div>
+
+<div class="row pb-3">
+  <div class="col-4">
+    <h4>Udostępnione przez: {{photo.uploader}}</h4>
+  </div>
+  <div class="col-4 text-right">
+    <h4>{{photo.prettify_date}}</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <p>{{photo.summary}}</p>
+  </div>
+</div>
+
+<form id="upvote" class="" action="{% url 'upvote' photo.id %}" method="post">
+  {% csrf_token %}
+  <input type="hidden">
+</form>
+
+
+
+
+
+{% endblock %}

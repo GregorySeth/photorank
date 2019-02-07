@@ -50,10 +50,19 @@ body {
 
 }
 
+#plus {
+
+	height: 30px;
+	border: 2px solid #1A4C14;
+	padding: 2px;
+	border-radius: 50%;
+
+}
+
 .content {
 
 	color: #1A4C14;
-	margin: 15px;
+	/* margin: 15px; */
 
 }
 
