@@ -20,7 +20,7 @@ except ImportError:
 try:
     from .local_settings import *
 except ImportError:
-    pass
+pass
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +35,7 @@ SECRET_KEY = 'j+s$k+8y$blinug5ze_jl=hs4!_l^w9(5an9+a*8b+*!zi7ri&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['142.93.171.54']
 
 
 # Application definition
