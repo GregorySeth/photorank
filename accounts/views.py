@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
-# def accounts(request):
-#     return render(request, 'accounts/accounts.html')
+
+def success(request):
+    return render(request, 'accounts/success.html')
 
 def logout(request):
     if request.method == 'POST':
@@ -31,7 +32,7 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 auth.login(request, user)
-                return redirect('home')
+                return redirect('success')
         else:
             return render(request, 'accounts/signup.html', {'error':'Podane hasła różnią się od siebie.'})
     else:

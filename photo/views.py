@@ -4,7 +4,7 @@ from .models import Photo
 from django.utils import timezone
 
 def home(request):
-    photos = Photo.objects
+    photos = Photo.objects.order_by('-votes_total')
     return render(request, 'photo/home.html', {'photos':photos})
 
 @login_required(login_url="signup")

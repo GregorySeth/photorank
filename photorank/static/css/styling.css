@@ -62,7 +62,6 @@ body {
 .content {
 
 	color: #1A4C14;
-	/* margin: 15px; */
 
 }
 
@@ -125,6 +124,26 @@ body {
 
 }
 
+.ramka {
+
+	display: inline-flex;
+	border: 2px solid #4D9945;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #1A4C14;
+	font-weight: bold;
+	font-size: 130%;
+	border-radius: 20px;
+	margin-top: 20px;
+
+}
+
+.ramka:hover {
+
+	cursor: default;
+
+}
+
 hr {
 
 	border-color: #738990;
@@ -157,5 +176,12 @@ a:hover {
 .nocursor:hover {
 
 	cursor: default;
+
+}
+
+#info {
+
+	background: #9AD894;
+	border-radius: 25%;
 
 }

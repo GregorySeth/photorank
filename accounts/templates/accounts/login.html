@@ -2,30 +2,30 @@
 
 {% block content %}
 
-<h1>Zaloguj się</h1>
+<div class="container text-center">
+  <h1>Zaloguj się</h1>
+  <form action="{% url 'login' %}" method="POST">
 
-<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
 
-  {% csrf_token %}
-
-  Nazwa użytkownika:
-  <br>
-  <input type="text" name="username" value="">
-  <br>
-  Hasło:
-  <br>
-  <input type="password" name="password">
-  <br>
-  <br>
-  {% if error %}
-  Błąd! {{ error }}
-  <br>
-  <br>
-  {% endif %}
-  <input class="przycisk" type="submit" name="submit" value="Login">
-
-</form>
-
+    Nazwa użytkownika:
+    <br>
+    <input type="text" name="username" value="">
+    <br>
+    Hasło:
+    <br>
+    <input type="password" name="password">
+    <br>
+    <br>
+    {% if error %}
+    Błąd! {{ error }}
+    <br>
+    <br>
+    {% endif %}
+    <input class="przycisk" type="submit" name="submit" value="Login">
+    
+  </form>
+</div>
 
 
 {% endblock %}
