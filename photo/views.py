@@ -10,15 +10,10 @@ def home(request):
 @login_required(login_url="signup")
 def create(request):
     if request.method == "POST":
-        if request.POST['title'] and request.POST['summary'] and request.POST['url'] and request.FILES['icon'] and request.FILES['image']:
+        if request.POST['title'] and request.POST['summary'] and request.FILES['image']:
             photo = Photo()
             photo.title = request.POST['title']
             photo.summary = request.POST['summary']
-            if request.POST['url'].startswith('http://') or request.POST['url'].startswith('https://'):
-                photo.url = request.POST['url']
-            else:
-                photo.url = 'http://' + request.POST['url']
-            photo.icon = request.FILES['icon']
             photo.image = request.FILES['image']
             photo.pub_date = timezone.datetime.now()
             photo.uploader = request.user
