@@ -14,7 +14,7 @@
 
 <div class="row pt-3">
   <div class="col-2" onclick="window.location='{% url 'detail' photo.id %}';" style="cursor: pointer">
-    <img src="{{photo.image.url}}" class="img-fluid">
+    <img src="{{photo.image.url}}" class="img-fluid photoborder">
   </div>
   <div class="col-6" onclick="window.location='{% url 'detail' photo.id %}';" style="cursor: pointer">
     <h2>{{ photo.title }}</h2>
